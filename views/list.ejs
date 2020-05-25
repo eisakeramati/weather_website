@@ -1,0 +1,18 @@
+<%- include("header") -%>
+<div class="res bg-secondary">
+  <h3>The current weather at <%= city %></h3>
+  <img src=<%= pic %> alt="weather_icon">
+  <p>It is <b><%= weather %>.</b><p>
+  <p>the temprature is <b><%= type %> </b>degrees <%= ttype %>. </p>
+  <p>But it feels like <b><%= feel %> </b>degrees <%= ttype %>. </p>
+  <hr class="fancy-line"></hr>
+  <p>Some additional info includes:</p>
+  <p>The level of humidity:<b> <%= hum %></b>. </p>
+  <p>The pressure is estimated at:<b> <%= press %></b>. </p>
+  <p>Maximum temprature of the day:<b> <%= tmax %> degrees</b>. </p>
+  <p>Minimum temprature of the day:<b> <%= tmin %> degrees</b>. </p>
+  <img src="/city.png" class="cityim" alt="city">
+</div>
+
+
+<%- include("footer") -%>
