@@ -1,7 +1,7 @@
 body {
   background-color: #f1e3cb;
   background-image: -webkit-linear-gradient(70deg, #FF7F50 50%, #f1e3cb 50%);
-  min-height: 800px;
+  min-height: 100vh;
   text-align: center;
 }
 
