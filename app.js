@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyp = require('body-parser');
+const geoip = require('geoip-lite');
 const app = express();
 const https = require('https');
 const func1 = require(__dirname + "/func1.js");
@@ -17,6 +18,13 @@ app.get("/", function(req, res) {
 
 app.get("/mult_days", function(req, res) {
   res.render('mult_main');
+});
+
+app.get("/about", function(req, res){
+  var geo = geoip.lookup(req.connection.remoteAddress);
+  res.render("about", {
+    location:geo
+  });
 });
 
 app.post("/", function(req, res) {
@@ -55,13 +63,23 @@ app.post("/", function(req, res) {
 app.post("/mult_days", function(req, res) {
   var city = req.body.city;
   var kind = req.body.radio;
-  var day = req.body.day;
+  var day = parseInt(req.body.day);
   var temp_type;
   wdata = func1.manage_second_page(city, kind);
   setTimeout(function() {
-    console.log(wdata.list[0].main);
-    console.log(wdata.list[0].weather);
-  }, 500);
+    if (wdata.cod == "200") {
+      wdata = func1.data_edit(wdata);
+      setTimeout(function() {
+        inp = func1.num(wdata, day);
+        res.render('list_mult', {
+          input: inp,
+          city: wdata.city.name
+        });
+      }, 100);
+    } else {
+      res.render('error');
+    }
+  }, 300);
 });
 
 app.listen(3000, function() {

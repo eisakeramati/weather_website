@@ -1,0 +1,25 @@
+<%- include("header") -%>
+<div class="titl">
+  <h2>Below shows the weather data of <span class="color"><%= city %></span> for the following <%= inp.length %> days!</h2>
+  <p style="color:gray;">Keep in mind the given dates, for inquiry about the current weather go to the current tab</p>
+</div>
+<div class="container">
+  <div class="row row2">
+    <% for (var i=0; i < inp.length; i++){ %>
+    <div class="col-lg-4 mid">
+      <div class="itm res2">
+        <p>The date is <b><%= inp[i].dt_txt.substring(0,10) %></b></p>
+        <img src=<%= inp[i].weather.icon %> alt="weather_im">
+        <h6><%= inp[i].weather[0].main %></h6>
+        <h7>More Specific, <b><%= inp[i].weather[0].description%></b></h7>
+        <p>the temprature: <b class="color"><%= inp[i].main.temp %></b></p>
+        <p>but it feels like <b class="color"><%= inp[i].main.feels_like %></b></p>
+        <p>Maximum temprature is <%= inp[i].main.temp_max %></p>
+        <p>Minimum temprature is <%= inp[i].main.temp_min %></p>
+        <p>The humidity level is <%= inp[i].main.humidity %></p>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+<%- include("footer") -%>

@@ -90,7 +90,7 @@ body {
 
 .mid {
   text-align: center;
-  margin: auto;
+  margin: 30px auto;
 }
 
 .err {
@@ -121,4 +121,44 @@ body {
 
 .mtop {
   margin-top: 10px;
+}
+
+.itm {
+  background-color: grey;
+  margin-bottom: 20px;
+}
+
+.nav-item {
+  margin: auto 20px;
+}
+
+.titl {
+  text-align: center;
+  margin-top: 75px;
+}
+
+.row2 {
+  margin-top: 75px;
+}
+
+.res2 {
+  border-radius: 20px;
+  color: #D3D3D3;
+  padding: 10px;
+}
+
+.color {
+  color: #FF7F50;
+}
+
+.about {
+  text-align: center;
+  padding: 50px;
+}
+
+.avatar {
+  margin-top:30px;
+  border-radius: 50%;
+  background-color: gray;
+  width: 150px;
 }

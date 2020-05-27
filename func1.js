@@ -26,6 +26,7 @@ const https = require('https');
       })
     });
   }
+
 module.exports.manage_second_page = manage_second_page;
   function manage_second_page(city, kind) {
     var kind2;
@@ -52,3 +53,25 @@ module.exports.manage_second_page = manage_second_page;
       })
     });
   }
+
+
+module.exports.data_edit = data_edit;
+
+function data_edit(data){
+  for (let i = 0; i < data.list.length; i++) {
+    data.list[i].weather.icon = 'http://openweathermap.org/img/wn/'+ data.list[i].weather[0].icon +'@2x.png';
+  }
+  return data;
+}
+
+module.exports.num = num;
+
+function num(data, day){
+  var arr =[];
+  var ind = 2;
+  for (let i = day; day >0 ; day--) {
+    arr.push(data.list[ind]);
+    ind = ind + 9;
+  }
+  return arr;
+}
