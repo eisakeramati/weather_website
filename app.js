@@ -86,6 +86,6 @@ app.post("/mult_days", function(req, res) {
   }, 300);
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log('server listening on port 3000');
 })
