@@ -162,3 +162,29 @@ body {
   background-color: gray;
   width: 150px;
 }
+
+.about-txt {
+  color: 	#484848;
+  padding: 30px 100px;
+  text-justify: inter-word;
+  text-align: justify;
+  margin: 40px;
+}
+
+.imwidth {
+  width: 150px;
+}
+
+.imwidth2 {
+  width: 100px;
+}
+
+
+.mid2 {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.link {
+  color: #f9b384;
+}

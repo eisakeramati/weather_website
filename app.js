@@ -27,6 +27,10 @@ app.get("/about", function(req, res){
   });
 });
 
+app.get("/how", function(req, res){
+  res.render('how');
+});
+
 app.post("/", function(req, res) {
   var city = req.body.city;
   var kind = req.body.radio;
