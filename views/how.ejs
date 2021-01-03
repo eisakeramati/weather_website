@@ -1,4 +1,8 @@
-<%- include("header") -%>
+<% if (opt == 1){  %>
+    <%- include("header_auth") -%>
+<% }else{ %>
+    <%- include("header") -%>
+<%  }%>
 <div class="about container">
   <h1 style="font-size: 70px;">And How does this work?</h1>
     <div class="about-txt">

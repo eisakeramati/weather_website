@@ -1,4 +1,8 @@
-<%- include("header") -%>
+<% if (opt == 1){  %>
+  <%- include("header_auth") -%>
+<% }else{ %>
+  <%- include("header") -%>
+<%  }%>
 <div style="text-align:center; padding-top:20px;"><h2>You are looking at the current weather of the city!</h2></div>
 <div class="res bg-secondary">
   <h3>The current weather at <%= city %></h3>

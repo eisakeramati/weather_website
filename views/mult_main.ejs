@@ -1,4 +1,8 @@
-<%- include("main_head") -%>
+<% if (opt == 1){  %>
+  <%- include("main_head_auth") -%>
+<% }else{ %>
+  <%- include("main_head") -%>
+<%  }%>
 <!-- <h4>This form gives you weather data from 2 to 5, following days</h4> -->
 <form class="form" action="/mult_days" method="post">
   <div class="form-group">

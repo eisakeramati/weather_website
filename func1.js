@@ -26,6 +26,32 @@ const https = require('https');
       })
     });
   }
+module.exports.manage_profile = manage_profile;
+function manage_profile(city, city2, city3, func) {
+  const fs = require('fs');
+  var key = fs.readFileSync(__dirname + "/key.txt").toString();
+  key = key.substring(0, key.length - 1);
+  var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + key + "&units=" + "metric";
+  https.get(url, function(response) {
+    response.on('data', function(data) {
+      wdata = JSON.parse(data);
+      var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city2 + "&appid=" + key + "&units=" + "metric";
+      https.get(url, function(response) {
+        response.on('data', function(data) {
+          wdata2 = JSON.parse(data);
+          var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city3 + "&appid=" + key + "&units=" + "metric";
+          https.get(url, function(response) {
+            response.on('data', function(data) {
+              wdata3 = JSON.parse(data);
+              data = {"d1":wdata, "d2":wdata2, "d3":wdata3};
+              func(data);
+            })
+          });
+        })
+      });
+    })
+  });
+}
 
 module.exports.manage_second_page = manage_second_page;
   function manage_second_page(city, kind) {

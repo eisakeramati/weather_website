@@ -1,6 +1,10 @@
-<%- include("header") -%>
+<% if (auth == 1){  %>
+<%- include("header_auth") -%>
+<% }else{ %>
+  <%- include("header") -%>
+<%  }%>
 <div class="about container">
-  <h1 style="font-size: 70px;">Hello there!<%= location %></h1>
+  <h1 style="font-size: 70px;">Hello there!</h1>
   <img src="/me.png" class="avatar" alt="avatar">
   <div class="about-txt">
     <h4>Hi I'm Eisa! I designed this website as a beginners project to Node.js and backend development.</h4>

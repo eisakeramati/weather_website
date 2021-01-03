@@ -1,0 +1,19 @@
+<%- include("header") -%>
+<h1 style="text-align:center; margin-top: 80px;">Log into your <span class="navbrand2">WeatherApp</span> account!</h1>
+<form class="form w-50" style="margin-inline: auto" action="/auth" method="post" >
+    <div class="form-group ">
+        <label for="exampleInputEmail1">email</label>
+        <input name="username" class="form-control" placeholder="Enter email" >
+
+        <label for="exampleInputEmail1">password</label>
+        <input name="password" class="form-control" type="password" placeholder="Enter password">
+    </div>
+    <% if (opt==1){ %>
+    <div style="border-radius: 3px; background-color: orangered"><p style="padding: 10px">
+            Username or password is incorrect!</p></div>
+    <%}%>
+    <button type="submit" class="btn btn-secondary">Submit</button>
+    <br>
+    <a href="/register">Not a member yet? click here to sign up!</a>
+</form>
+<%- include("footer") -%>

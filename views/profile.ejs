@@ -1,0 +1,56 @@
+<%- include("header_auth") -%>
+<h1 style="text-align:center; margin-top: 80px;">Hello There
+    <span><img class="obi" src="obiwan.png" width="80px" height="80px"></span>
+    <span class="navbrand2"><%= city %>!</span></h1>
+    <div class="container w-75 profile">
+        <div class="row" style="margin-top: 50px;margin-bottom: 30px; border-bottom: 4px solid #808080;">
+            <div class="col-4" >
+                <h3 style="padding-top: 15px;"><%= city %></h3>
+                <img src=<%= pic %> alt="weather_im">
+            </div>
+            <div class="col-8"style="border-left: 4px solid #808080;padding-top: 15px;">
+                <p>It's currently <b><%= weather %></b></p>
+                <p>temprature at this time: <b><%= type %></b> but it feels like: <b><%= feel %></b></p>
+                <p>todays max temprature: <b><%= tmax %></b> minimum temprature: <b><%= tmin %></b></p>
+            </div>
+
+        </div>
+        <h4>You recently looked at:</h4>
+        <div class="row" style="margin-top: 30px; border-top: 4px solid #808080;">
+            <div class="col-6" >
+                <h4 style="padding-top: 15px;"><%= city2 %></h4>
+                <img src=<%= pic2 %> alt="weather_im">
+                <p>It's currently <b><%= weather2 %></b></p>
+                <p>temprature at this time: <b><%= type2 %></b> but it feels like: <b><%= feel2 %></b></p>
+                <p>todays max temprature: <b><%= tmax2 %></b> minimum temprature: <b><%= tmin2 %></b></p>
+            </div>
+            <div class="col-6"style="border-left: 4px solid #808080;">
+                <h4 style="padding-top: 15px;"><%= city3 %></h4>
+                <img src=<%= pic3 %> alt="weather_im">
+                <p>It's currently <b><%= weather3 %></b></p>
+                <p>temprature at this time: <b><%= type3 %></b> but it feels like: <b><%= feel3 %></b></p>
+                <p>todays max temprature: <b><%= tmax3 %></b> minimum temprature: <b><%= tmin3 %></b></p>
+            </div>
+
+        </div>
+
+    </div>
+<div class="container w-75 profile">
+    <div class="row" style="margin-top: 30px; ">
+        <div class="col-6 def" >
+            <span><img  src="haw.jpg" width="300px" height="200px"></span>
+        </div>
+        <div class="col-6 def2" >
+            <span><img src="tib.jpg"width="300px" height="200px"></span>
+        </div>
+    </div>
+    <div style="padding: 20px; margin-bottom: 30px;">
+    <h4>Get the latest weather information personalized for you,</h4>
+    <h4>from the warmth of the pacific islands to the chills of Tibetan plateau!</h4>
+    <p>Signing up with us help keep track up of your latest search.</p>
+    <p>your profile has current location weather info and your last two lookups!</p>
+    <p>if it's your first time signing in then we have Hawaii and Lhasa as default.</p>
+    <p>Two of the developers favorite spots on earth! What a contrast, right!?</p>
+    </div>
+</div>
+<%- include("footer") -%>

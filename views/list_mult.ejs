@@ -1,4 +1,8 @@
-<%- include("header") -%>
+<% if (opt == 1){  %>
+  <%- include("header_auth") -%>
+<% }else{ %>
+  <%- include("header") -%>
+<%  }%>
 <div class="titl">
   <h2>Below shows the weather data of <span class="color"><%= city %></span> for the following <%= inp.length %> days!</h2>
   <p style="color:gray;">Keep in mind the given dates, for inquiry about the current weather go to the current tab</p>

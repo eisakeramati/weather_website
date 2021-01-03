@@ -1,4 +1,8 @@
-<%- include("main_head") -%>
+<% if (opt == 1){  %>
+  <%- include("main_head_auth") -%>
+<% }else{ %>
+  <%- include("main_head") -%>
+<%  }%>
 <form class="form" action="/" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1">City</label>
