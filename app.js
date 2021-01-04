@@ -222,11 +222,16 @@ app.post("/mult_days", function(req, res) {
       setTimeout(function() {
         inp = func1.num(wdata, day);
         if (req.isAuthenticated()){
-          User.update({_id: req.session.passport.user.id}, {
-            city2: req.user.city1,
-            city1: city
-          }, function (err){
-            if (err) console.log(err);
+          User.updateOne(
+              {_id: req.user._id},
+              {$set:{city2: req.user.city1,
+                  city1: city}}
+              , function (err){
+                if (err){ console.log(err);
+                  console.log("error")};
+              });
+          req.session.reload(function () {
+
           });
         res.render('list_mult', {
           input: inp,
