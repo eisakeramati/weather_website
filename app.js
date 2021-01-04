@@ -254,7 +254,7 @@ app.get("/profile", function(req, res){
       ip = ipAddress;
       // My IP address is 10.4.4.137
     });
-    var geo = geoip.lookup(ip);
+    var geo = geoip.lookup("69.158.246.65");
     var wdata, img_url, img_url3;
     func1.manage_profile(geo.city, req.user.city1, req.user.city2, function (wdata) {
       img_url = "http://openweathermap.org/img/wn/" + wdata.d1.weather[0].icon + "@2x.png";
