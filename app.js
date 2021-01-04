@@ -10,6 +10,7 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const publicIp = require('public-ip');
 app.set('view engine', 'ejs');
+var localIpV4Address = require("local-ipv4-address");
 
 app.use(session({
   secret: "my weather secret.",
@@ -248,7 +249,11 @@ app.post("/mult_days", function(req, res) {
 app.get("/profile", function(req, res){
   if (req.isAuthenticated()){
     //var geo = geoip.lookup(req.connection.remoteAddress);
-    var ip = (async () => {await publicIp.v4()})();
+    var ip;
+    localIpV4Address().then(function(ipAddress){
+      ip = ipAddress;
+      // My IP address is 10.4.4.137
+    });
     var geo = geoip.lookup(ip);
     var wdata, img_url, img_url3;
     func1.manage_profile(geo.city, req.user.city1, req.user.city2, function (wdata) {
