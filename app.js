@@ -20,7 +20,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb+srv://admin-eisa:eisa1234@cluster0.4vxhn.mongodb.net/WAUsers?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://admin-eisa:mongorye13@cluster0.4vxhn.mongodb.net/WAUsers?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set("useCreateIndex", true);
 
 
@@ -37,11 +37,13 @@ const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
 passport.serializeUser(function(user, done) {
-  done(null, user);
+  done(null, user.id);
 });
 
-passport.deserializeUser(function(user, done) {
-  done(null, user);
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
 });
 
 
